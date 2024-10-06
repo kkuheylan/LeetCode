@@ -19,18 +19,19 @@ class Solution(object):
         #                 sorted_head.insert(0,sorting_num)
         #             else:
         #                 for swap in sorted_head:
-        count = 0
-        for x in head:
-            count += 1
-            
+        count=0
+        def len_link(list):
+            temp=list.head
+            while(temp):
+                count+=1
+                temp=temp.next
+        
         for i in range(count - 1):
             if head[i] > head[i+1]:
                 pos1 = head.index(i)
                 pos2 = head.index(i+1)
                 head[pos1], head[pos2] = head[pos2], head[pos1]     
 
-            
-        
         for i in head:
             if head.count(i) != 1:
                 del_index = head.index(i)
@@ -44,5 +45,3 @@ class Solution(object):
     
     
     
-    
-        
