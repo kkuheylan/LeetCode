@@ -19,6 +19,4 @@ class Solution(object):
             
         return len(int_nums)
 
-        
-so1 = Solution()
-so1.numDifferentIntegers("a1b01c001")
+ 

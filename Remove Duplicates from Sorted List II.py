@@ -38,7 +38,7 @@ class Solution(object):
                 head = head.pop([del_index])
         return head
     
-    
+# not finished yet!
     
     
     
