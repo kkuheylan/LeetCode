@@ -1,22 +1,18 @@
 
-
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
         :type s: str
         :rtype: int
         """
-        left = 0
-        right = 1
-        values = []
-        while right == len(s):
-            res = s[left:right]
-            values.append(res)
-            left += 1
-            right += 1
-            print(left)
-            print(right)
-        print(values)
+        left = 0 
+        max_length = 0 
+        seen = {}
+        for right in range(len(s)):
+            if s[right] in seen and seen[s[right]] >= left:
+                left = seen[s[right]] + 1 
 
-so1 = Solution()
-so1.lengthOfLongestSubstring([1,2,3,4,5,6,7,8])
+            seen[s[right]] = right
+            max_length = max(max_length, right - left + 1) 
+
+        return max_length
